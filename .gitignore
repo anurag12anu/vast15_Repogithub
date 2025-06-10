@@ -3,3 +3,4 @@ __pycache__/
 .env
 db.sqlite3
 vast_vertual/
+vast_app/migrations
