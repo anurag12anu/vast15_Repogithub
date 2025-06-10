@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>students List</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f3f3f3;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      table {
+        width: 90%;
+        margin: 0 auto;
+        border-collapse: collapse;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 12px;
+        text-align: center;
+      }
+      th {
+        background-color: #007bff;
+        color: white;
+      }
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>List of students</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Branch</th>
+          <th>Created At</th>
+          <th>Updated At</th>
+          <th>Contact</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for students in student %}
+        <tr>
+          <td>{{ students.id }}</td>
+          <td>{{ students.name }}</td>
+          <td>{{ students.email }}</td>
+          <td>{{ students.branch }}</td>
+          <td>{{ students.created_at }}</td>
+          <td>{{ students.updated_at }}</td>
+          <td>{{ students.contact }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="7">No students found.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

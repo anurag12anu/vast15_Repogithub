@@ -1,0 +1,16 @@
+<h2>Create Student</h2>
+<form method="post" action="{% url 'create_list' %}">
+  {% csrf_token %}
+  <label>Name:</label><input type="text" name="name" /><br />
+  <label>Email:</label><input type="email" name="email" /><br />
+
+  <label>Branch:</label>
+  <select name="branch">
+    {% for branches in branch %}
+    <option value="{{ branches.id }}">{{ branches.name }}</option>
+    {% endfor %}</select
+  ><br />
+
+  <label>Contact:</label><input type="text" name="contact" /><br />
+  <button type="submit">Submit</button>
+</form>
