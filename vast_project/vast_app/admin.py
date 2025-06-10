@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .model.student import Student
+from .model.branch import Branch
 
-# Register your models here.
+admin.site.register(Student)
+admin.site.register(Branch)

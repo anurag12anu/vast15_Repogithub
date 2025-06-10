@@ -1,3 +1,4 @@
 from django.db import models
 
-# Create your models here.
+from vast_app.model.student import Student
+from vast_app.model.branch import Branch
